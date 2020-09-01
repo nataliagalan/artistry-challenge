@@ -1,0 +1,35 @@
+<h1>artist show page</h1>
+
+<h4>Name: <%= @artist.name %></h4>
+<h4>Title: <%= @artist.title %></h4>
+<h4>Age: <%= @artist.age %></h4>
+<h4>Instruments: 
+<ul>
+<% @artist.instruments.each do |instrument| %>
+   <li> <%= link_to instrument.name, instrument_path(instrument) %></li>
+<% end %>
+</ul>
+</h4>
+
+<%= button_to "Back to artist index", artists_path, method: :get %>
+<br>
+<%= button_to "Back to instrument index", instruments_path, method: :get %>
+  <%# create_table "artist_instruments", force: :cascade do |t| %>
+    <%# t.integer "artist_id" %>
+    <%# t.integer "instrument_id" %>
+  
+
+  <%# create_table "artists", force: :cascade do |t| %>
+    <%# t.string "name" %>
+    <%# t.integer "age" %>
+    <%# t.string "title" %>
+    <%# t.datetime "created_at", null: false %>
+    <%# t.datetime "updated_at", null: false %>
+  
+
+  <%# create_table "instruments", force: :cascade do |t| %>
+    <%# t.string "name" %>
+    <%# t.string "classification" %>
+    <%# t.datetime "created_at", null: false %>
+    <%# t.datetime "updated_at", null: false %>
+  

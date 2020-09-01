@@ -1,0 +1,42 @@
+<h1>Register new artist</h1>
+
+<% if flash[:errors] %>
+<ul>
+    <% flash[:errors].each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+</ul>
+<% end %>
+
+<%= form_for @artist do |f| %>
+    <%= f.label :name, "Enter artist's name:" %>
+    <%= f.text_field :name %>
+    <br> <br>
+    <%= f.label :title, "Enter artist's title:" %>
+    <%= f.text_field :title %>
+    <br> <br>
+    <%= f.label :age, "Enter artist's age:" %>
+    <%= f.number_field :age %>
+    <br> <br>
+    <%= f.submit %>
+
+<% end %>
+
+  <%# create_table "artist_instruments", force: :cascade do |t| %>
+    <%# t.integer "artist_id" %>
+    <%# t.integer "instrument_id" %>
+  
+
+  <%# create_table "artists", force: :cascade do |t| %>
+    <%# t.string "name" %>
+    <%# t.integer "age" %>
+    <%# t.string "title" %>
+    <%# t.datetime "created_at", null: false %>
+    <%# t.datetime "updated_at", null: false %>
+  
+
+  <%# create_table "instruments", force: :cascade do |t| %>
+    <%# t.string "name" %>
+    <%# t.string "classification" %>
+    <%# t.datetime "created_at", null: false %>
+    <%# t.datetime "updated_at", null: false %>

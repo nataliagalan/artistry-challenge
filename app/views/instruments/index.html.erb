@@ -1,0 +1,8 @@
+<h1>These are all the instruments from our studio</h1>
+<ul>
+<% @instruments.each do |instrument| %>
+<li><%= link_to "#{instrument.name} | #{instrument.classification}", instrument_path(instrument) %></li>
+<% end %>
+</ul>
+
+<%= button_to "Assign instruments to artists", new_artist_instrument_path, method: :get %>
